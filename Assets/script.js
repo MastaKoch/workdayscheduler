@@ -2,22 +2,24 @@ var today = moment();
 $("#currentDay").text(today.format("dddd MMMM Do YYYY, h: mm a"));
 
 var hours = today.hours();
-var currentHour = parseInt(moment().format("h"));
+var currentHour = parseInt(moment().format("H"));
 
-function timeKeeper(){
-    if (hours < currentHour) {
-        $(".row").addClass("past");
-    }
-    if (hours == currentHour) {
-        $(".row").addClass("present");
-    }
-    if (hours>currentHour) {
-        $(".row").addClass("future");
-    }
-    
+// gets element from HTML page from input sections. For the function it takes the id from each row.
+$("input.form-control").each(function() {
+    var parent= $(this).parents("div.row");
+    var id = parseInt(parent.attr("id"));
 
-}
+     if (id < currentHour) {
+                $(this).addClass("past");
+            }
+            if (id == currentHour) {
+                $(this).addClass("present");
+            }
+            if (id>currentHour) {
+                $(this).addClass("future");
+   };
 
+// on click function for save button to store data
 $(".saveBtn").on("click", function(){
     var savedData = $(this).parent().siblings(".form-control").val().trim()
     var dataField = $(this).parent().parent().attr("id")
@@ -38,8 +40,4 @@ function getStorage(){
 
 }
 
-getStorage()
-
-// get current time w/ moment and compare w/ timeblock time
-// differentiate somehow between am and pm times
-// look up documentation to understand how to use moment
+getStorage()});
