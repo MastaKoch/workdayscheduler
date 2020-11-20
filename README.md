@@ -19,6 +19,12 @@ Everything is greyed out except for the last block, which is red for the present
 
 If I had done this at 4:14 pm, then the 5 pm block would be colored green.
 
+Also, when I click save after typing in my schedule in the time slot, it will save when I refresh the page.
+
+See below:
+
+<img width="1180" alt="Screen Shot 2020-11-20 at 5 17 06 PM" src="https://user-images.githubusercontent.com/72670039/99855186-39172f00-2b54-11eb-88f8-14f0c7e502ec.png">
+
 
 ## Motivation
 
